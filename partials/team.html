@@ -1,0 +1,25 @@
+<div class="col-xs-6 col-sm-3">
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+		      <h3 class="panel-title">Unassigned</h3>
+		    </div> 
+
+		<div class="panel-body">
+			<div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title">{{list1.title}}</div>
+		</div>
+	</div>
+	<div class="panel panel-info" 
+		data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable >
+		<div class="panel-heading">
+		  <h3 class="panel-title">Grace K.</h3>
+		</div> 
+
+	  <div class="panel-body">
+	  	<div class="btn btn-primary" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+	    Basic panel example
+	  </div>
+	</div>
+
+</div>
+
+

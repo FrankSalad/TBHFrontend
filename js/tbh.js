@@ -1,4 +1,27 @@
-angular.module('tbh', ['ui.bootstrap']);
+var tbh = angular.module('tbh', ['ngRoute', 'ui.bootstrap', 'ngDragDrop']);
+tbh.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+    	when('/teams', {
+        templateUrl: 'partials/team.html',
+        controller: 'TeamCtrl'
+      }).
+      when('/residents', {
+        templateUrl: 'partials/phone-list.html',
+        controller: 'PhoneListCtrl'
+      }).
+      when('/residents/:phoneId', {
+        templateUrl: 'partials/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+      }).
+      when('/floors', {
+        templateUrl: 'partials/floor.html',
+        controller: 'FloorCtrl'
+      }).
+      otherwise({
+        redirectTo: '/floors'
+      });
+  }]);
 
 function FloorCtrl($scope) {
 	$scope.residents = [
@@ -30,4 +53,9 @@ function FloorCtrl($scope) {
 			'Jim R.',
 		]
 	};
+}
+
+function TeamCtrl($scope) {
+	$scope.list1 = {title: 'AngularJS - Drag Me'};
+	$scope.list2 = {};
 }
