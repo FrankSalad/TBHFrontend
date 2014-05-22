@@ -43,19 +43,58 @@ function FloorCtrl($scope) {
 		{status: 'ok', name:'Thomas H.'},
 		{status: 'ok', name:'Elizabeth M.'},
 	];
+
+	$scope.residents2 = $scope.residents.slice(0);
+	shuffle($scope.residents2);
+	$scope.residents3 = $scope.residents.slice(0);
+	shuffle($scope.residents3);
+
 	$scope.statsViewerCollapsed = true;
-	$scope.team  = {
-		name: 'Grace, Mary, Anne, Jim',
-		members : [
-			'Grace K.',
-			'Mary K.',
-			'Anne M.',
-			'Jim R.',
-		]
-	};
+
+	$scope.teams = [
+		'Irene, Diana, Jorge, Iris',
+		'Grace, Mary, Anne, Jim',
+		'Chirley, Tom, Daniel, Gretchen'
+	];
 }
 
 function TeamCtrl($scope) {
-	$scope.list1 = {title: 'AngularJS - Drag Me'};
-	$scope.list2 = {};
+	$scope.cnas = [
+		{name: 'Mary K.', onDuty:true}, 
+		{name: 'Anne M.', onDuty:true}, 
+		{name: 'Jim R.', onDuty:true}
+	];
+	$scope.teams = [
+		{name : 'Grace K', members:[]}
+	];
+
+	$scope.dropSuccessHandler = function($event,$index){
+		$scope.cnas.splice($index,1);
+	};
+
+	$scope.onDrop = function($event,$data,$team){
+		$team.push($data);
+	};
+}
+
+function shuffle(array) {
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+    ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }

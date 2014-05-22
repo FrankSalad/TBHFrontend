@@ -1,22 +1,30 @@
+<button type="button" class="btn btn-lg btn-default">New Team</button>
 <div class="col-xs-6 col-sm-3">
+
 	<div class="panel panel-danger">
 		<div class="panel-heading">
 		      <h3 class="panel-title">Unassigned</h3>
 		    </div> 
 
 		<div class="panel-body">
-			<div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title">{{list1.title}}</div>
+			<button class="nurse btn btn-{{member.onDuty ? 'primary' : 'default'}}" 
+			 ng-click="member.onDuty=!member.onDuty"
+
+			ui-draggable="true" drag="member" 
+                    on-drop-success="dropSuccessHandler($event, $index)"
+                    ng-repeat="member in cnas track by $index">{{member.name}}</button>
 		</div>
 	</div>
+	 
+
 	<div class="panel panel-info" 
-		data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable >
+		ui-on-Drop="onDrop($event,$data,team.members)" ng-repeat="team in teams">
 		<div class="panel-heading">
-		  <h3 class="panel-title">Grace K.</h3>
+		  <h3 class="panel-title">{{team.name}}</h3>
 		</div> 
 
 	  <div class="panel-body">
-	  	<div class="btn btn-primary" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
-	    Basic panel example
+	  	<button ng-click="member.onDuty=!member.onDuty" class="nurse btn btn-{{member.onDuty ? 'primary' : 'default'}}" ng-repeat="member in team.members">{{member.name}}</button>
 	  </div>
 	</div>
 

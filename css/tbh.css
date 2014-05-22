@@ -41,3 +41,7 @@ span.glyphicon-user {
 	background-color: #CCC;
 	padding: 20px;
 }
+
+.nurse.btn {
+	margin: 5px 3px;
+}
