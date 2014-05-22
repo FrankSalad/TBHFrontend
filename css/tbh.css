@@ -1,0 +1,43 @@
+.dropdown-menu {
+	min-width: 90px;
+}
+
+.resident-ok.panel {
+	margin-bottom: 10px;
+}
+.resident-ok>.panel-heading {
+	padding: 5px 15px;
+}
+
+.resident-ok .panel-title {
+	font-size: 12px;
+}
+
+.resident-ok.btn {
+	margin: 5px 3px;
+	background-color: #D7EBCE;
+	border-color: #d6e9c6;
+	font-size: 17px;
+	color: #777;
+}
+
+span.glyphicon-user {
+	margin-right: 5px;
+}
+
+.panel-title>.btn {
+	display: inline-block;
+	margin: -8px;
+	float: right;
+}
+
+.stats {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+}
+.stats>div {
+	background-color: #CCC;
+	padding: 20px;
+}
