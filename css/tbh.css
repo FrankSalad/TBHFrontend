@@ -79,6 +79,11 @@ span.glyphicon-user {
 	margin: 5px 3px;
 }
 
+.panel-body .timer {
+	display: inline-block;
+	float: right;
+}
+
 
 .panel-body .info {
 	display: block;
