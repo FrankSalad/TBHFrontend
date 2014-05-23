@@ -1,4 +1,4 @@
-var tbh = angular.module('tbh', ['ngRoute', 'ui.bootstrap', 'ngDragDrop']);
+var tbh = angular.module('tbh', [ 'ngRoute', 'ui.bootstrap', 'ngDragDrop']);
 tbh.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -21,7 +21,45 @@ tbh.config(['$routeProvider',
       otherwise({
         redirectTo: '/floors'
       });
-  }]);
+  }]).directive('navMenu', function($location) {
+  return function(scope, element, attrs) {
+    var links = element.find('a'),
+        onClass = attrs.navMenu || 'active',
+        routePattern,
+        link,
+        url,
+        currentLink,
+        urlMap = {},
+        i;
+
+    if (!$location.$$html5) {
+      routePattern = /^#[^/]*/;
+    }
+
+    for (i = 0; i < links.length; i++) {
+      link = angular.element(links[i]);
+      url = link.attr('href');
+
+      if ($location.$$html5) {
+        urlMap[url] = link;
+      } else {
+        urlMap[url.replace(routePattern, '')] = link;
+      }
+    }
+
+    scope.$on('$routeChangeStart', function() {
+      var pathLink = urlMap[$location.path()];
+
+      if (pathLink) {
+        if (currentLink) {
+          currentLink.parent().removeClass(onClass);
+        }
+        currentLink = pathLink;
+        currentLink.parent().addClass(onClass);
+      }
+    });
+  };
+});
 
 function FloorCtrl($scope) {
 	$scope.residents = [
@@ -53,11 +91,12 @@ function FloorCtrl($scope) {
 
 	$scope.teams = [
 
-		'Irene, Diana, Jorge, Iris',
+		'Jasmine, Diana, Jorge, Iris',
 		//'Jasmine', 'Diana', 'Jorge', 'Iris',
-		'Grace, Mary, Anne, Jim',
-		//'Blanca-Rosa, Mary, Anne, Jim',
 		'Greta, Tom, Daniel, Chirley',
+		'Irene, Mary, Anne, Jim',
+		//'Blanca-Rosa, Mary, Anne, Jim',
+		
 		//'Greta, Tom, Daniel, Chirley'
 	];
 }
@@ -72,11 +111,11 @@ function TeamCtrl($scope) {
 		{name: 'Iris L.', onDuty:true},
 		{name: 'Tom J.', onDuty:true}, 
 		{name: 'Daniel M.', onDuty:true}, 
-		{name: 'Greta A.', onDuty:true},
+		{name: 'Grace K.', onDuty:true},
 
 	];
 	$scope.teams = [
-		{name : 'Grace K.', members:[]},
+		{name : 'Jasmine D.', members:[]},
 		{name : 'Irene A.', members:[]},
 		{name : 'Greta A.', members:[]}
 	];
