@@ -1,3 +1,4 @@
+<!-- Left Panel -->
 <div class="col-xs-6 col-sm-3">
    <h4>
     Team: 
@@ -23,10 +24,12 @@
     </div>
   </div>
 
-  <button type="button" class="resident-ok btn btn-success btn-lg"   popover="{{resident.name}}" popover-trigger="mouseenter"  ng-repeat="resident in residents" >
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents" >
     <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
   </button>  
 </div>
+
+<!-- Center Panel -->
 <div class="col-xs-6 col-sm-3">
   <h4>
     Team: 
@@ -46,7 +49,7 @@
   </div> 
   </h4>
 
-  <div class="panel panel-danger">
+  <div class="resident-danger panel panel-danger">
     <div class="panel-heading">
       <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>Marge T.<button class="btn btn-danger">Handle</button></h3></h3>
     </div>
@@ -56,17 +59,19 @@
   </div>
   <div class="panel panel-warning">
     <div class="panel-heading">
-      <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>Kevin K. <span style="float: right; display:inline-block">Grace K.</span></h3>
+      <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>Kevin K. <span style="float: right; display:inline-block"><span class="ion-medkit"></span> Grace K.</span></h3>
     </div>
     <div class="panel-body">
       Temperature warning
     </div>
   </div>
 
-  <button type="button" class="resident-ok btn btn-success btn-lg"    ng-repeat="resident in residents2" ng-click="statsViewerCollapsed = !statsViewerCollapsed">
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents2">
     <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
   </button>  
 </div> 
+
+<!-- Right Panel -->
 <div class="col-xs-6 col-sm-3">
   <h4>
     Team: 
@@ -94,7 +99,14 @@
     </div>
   </div>
 
-  <button type="button" class="resident-ok btn btn-success btn-lg"   popover="{{resident.name}}" popover-trigger="mouseenter"  ng-repeat="resident in residents3" >
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents3" >
     <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
   </button>  
+</div>
+
+<div class="stats">
+  <div>
+    <h1>Thomas Howitt</h1>
+    <span class="update-time">Last Update: 3 minutes ago</span>
+  </div>
 </div>

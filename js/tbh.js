@@ -54,7 +54,7 @@ function FloorCtrl($scope) {
 	$scope.teams = [
 		'Irene, Diana, Jorge, Iris',
 		'Grace, Mary, Anne, Jim',
-		'Chirley, Tom, Daniel, Gretchen'
+		'Chirley, Tom, Daniel, Greta'
 	];
 }
 
@@ -62,11 +62,21 @@ function TeamCtrl($scope) {
 	$scope.cnas = [
 		{name: 'Mary K.', onDuty:true}, 
 		{name: 'Anne M.', onDuty:true}, 
-		{name: 'Jim R.', onDuty:true}
+		{name: 'Jim R.', onDuty:true},
+		{name: 'Diana P.', onDuty:true}, 
+		{name: 'Jorge D.', onDuty:true}, 
+		{name: 'Iris L.', onDuty:true},
+		{name: 'Tom J.', onDuty:true}, 
+		{name: 'Daniel M.', onDuty:true}, 
+		{name: 'Greta A.', onDuty:true},
+
 	];
 	$scope.teams = [
-		{name : 'Grace K', members:[]}
+		{name : 'Grace K.', members:[]},
+		{name : 'Irene A.', members:[]},
+		{name : 'Chirley R.', members:[]}
 	];
+
 
 	$scope.dropSuccessHandler = function($event,$index){
 		$scope.cnas.splice($index,1);
@@ -75,6 +85,10 @@ function TeamCtrl($scope) {
 	$scope.onDrop = function($event,$data,$team){
 		$team.push($data);
 	};
+
+	$scope.toggleOnDuty = function($member) {
+		$member.onDuty = !$member.onDuty;
+	}
 }
 
 function shuffle(array) {
