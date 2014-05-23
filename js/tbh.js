@@ -52,9 +52,13 @@ function FloorCtrl($scope) {
 	$scope.statsViewerCollapsed = true;
 
 	$scope.teams = [
+
 		'Irene, Diana, Jorge, Iris',
+		//'Jasmine', 'Diana', 'Jorge', 'Iris',
 		'Grace, Mary, Anne, Jim',
-		'Chirley, Tom, Daniel, Greta'
+		//'Blanca-Rosa, Mary, Anne, Jim',
+		'Greta, Tom, Daniel, Chirley',
+		//'Greta, Tom, Daniel, Chirley'
 	];
 }
 
@@ -74,7 +78,7 @@ function TeamCtrl($scope) {
 	$scope.teams = [
 		{name : 'Grace K.', members:[]},
 		{name : 'Irene A.', members:[]},
-		{name : 'Chirley R.', members:[]}
+		{name : 'Greta A.', members:[]}
 	];
 
 
