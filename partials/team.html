@@ -25,6 +25,8 @@
 
 	  <div class="panel-body">
 	  	<button ng-click="toggleOnDuty(member)" class="nurse btn btn-{{member.onDuty ? 'primary' : 'default'}}" ng-repeat="member in team.members"><span class="ion-medkit"></span> {{member.name}}</button>
+
+	  	<span class="info" ng-hide="team.members.length">Drag a staff member here to assign them to this team.</span>
 	  </div>
 	</div>
 
