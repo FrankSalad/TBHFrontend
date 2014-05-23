@@ -83,6 +83,6 @@ span.glyphicon-user {
 .panel-body .info {
 	display: block;
 	text-align: center;
-	color: gray;
+	color: #CCC;
 	font-size: 11px;
 }
