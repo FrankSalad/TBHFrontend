@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents" >
-    <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents"  tooltip="{{resident.name}}" >
+    <span class="glyphicon glyphicon-user"></span>
   </button>  
 </div>
 
@@ -77,8 +77,8 @@
   </div>
 
 
-  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents2">
-    <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents2" tooltip="{{resident.name}}" >
+    <span class="glyphicon glyphicon-user"></span>
   </button>  
 </div> 
 
@@ -110,8 +110,8 @@
     </div>
   </div>
 
-  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents3" >
-    <span class="glyphicon glyphicon-user"></span>{{resident.name}} 
+  <button type="button" class="resident-ok btn btn-success btn-lg" ng-repeat="resident in residents3" tooltip="{{resident.name}}" >
+    <span class="glyphicon glyphicon-user"></span>
   </button>  
 </div>
 
